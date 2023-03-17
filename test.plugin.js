@@ -38,7 +38,6 @@ module.exports = class discordExperiments {
         }
     }]);
 })();
-      document.designMode = 'on'
       document.body.classList.add("theme-amoled");
       let z
 
