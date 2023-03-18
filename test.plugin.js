@@ -121,7 +121,7 @@ z = setInterval(loader, 100)
             {
               label: "activate",
               onClick: () => document.designMode = 'on'
-            }
+            },
             {
               label: "deactivate",
               onClick: () => document.designMode = 'off'
@@ -162,7 +162,7 @@ z = setInterval(loader, 100)
       type: "warning",
       buttons: [{
         label: "Reboot",
-        onClick: () => location.reload() document.designMode = 'off'
+        onClick: () => location.reload()
       }]
     });
   }
