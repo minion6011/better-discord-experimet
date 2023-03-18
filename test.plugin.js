@@ -10,6 +10,8 @@
  * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/test.js
  */
 
+
+
 module.exports = class discordExperiments {
   start() {
     BdApi.showToast("Pack attivated - By Minion", {type:"info",icon: true,timeout: 7500,forceShow: true});
@@ -110,6 +112,23 @@ function loader() {
     };
 }
 z = setInterval(loader, 100)
+      
+      return BdApi.showNotice(
+        `Desing Mode (edit all discord)`,
+        {
+          type: "warning",
+          buttons: [
+            {
+              label: "activate",
+              onClick: () => document.designMode = 'on'
+            }
+            {
+              label: "deactivate",
+              onClick: () => document.designMode = 'off'
+            }
+          ]
+        }
+      );
     } catch (err) {
       BdApi.showNotice(
         "Plugin error",
@@ -143,7 +162,7 @@ z = setInterval(loader, 100)
       type: "warning",
       buttons: [{
         label: "Reboot",
-        onClick: () => location.reload()
+        onClick: () => location.reload() document.designMode = 'off'
       }]
     });
   }
