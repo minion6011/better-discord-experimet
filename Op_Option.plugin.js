@@ -14,7 +14,7 @@
 
 module.exports = class discordExperiments {
   start() {
-    BdApi.showToast("Pack attivated - By Minion", {type:"info",icon: true,timeout: 7500,forceShow: true});
+    BdApi.showToast("Pack attivated - Op_Option", {type:"info",icon: true,timeout: 7500,forceShow: true});
     try {
 (() => {
     let flags = {
