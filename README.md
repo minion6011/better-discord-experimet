@@ -12,3 +12,4 @@ activate:
 
 -You can use discord nitro stickers (unstable)
 
+-Spotify "Listen Along" without premium
