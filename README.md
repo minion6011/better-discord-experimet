@@ -10,6 +10,6 @@ activate:
 
 -Badge (only you can see) and badge function activated
 
--You can use discord nitro stickers (unstable)
+-You can use discord nitro stickers
 
--Spotify "Listen Along" without premium
+-Spotify "Listen Along" without premium (unstable)
