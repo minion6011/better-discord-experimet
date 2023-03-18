@@ -1,6 +1,6 @@
-## Better-Discord-Op_Option
+# Better-Discord-Op_Option
 
-# activate: 
+activate: 
 
 -fake nitro option
 
