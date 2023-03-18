@@ -1,4 +1,4 @@
-# better-discord-experimet
+# better-discord-OpOption
 
 activate: 
 
