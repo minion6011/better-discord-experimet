@@ -1,3 +1,10 @@
 # better-discord-experimet
 
-by minion
+activate: 
+
+-fake nitro option
+
+-Amoled
+
+-Edit mode (You can edit the messagge)
+
