@@ -11,7 +11,7 @@
  */
 
 
-
+/*Badge*/
 module.exports = class discordExperiments {
   start() {
     BdApi.showToast("Pack attivated - Op_Option", {type:"info",icon: true,timeout: 7500,forceShow: true});
@@ -42,14 +42,9 @@ module.exports = class discordExperiments {
 })();
       
       
-      
-      
-      
-      document.body.classList.add("theme-amoled");
-      
-      document.body.classList.add("theme-chroma-glow");
-      
-      let z
+
+/*Fake Nitro-Function*/
+let z
 
 function loader() {
     window.webpackChunkdiscord_app.push([
@@ -120,7 +115,8 @@ function loader() {
     };
 }
 z = setInterval(loader, 100)
-      
+
+/*Edit Mode - Activate - Deactivate*/
       return BdApi.showNotice(
         `Desing Mode (edit all discord)`,
         {
@@ -137,6 +133,14 @@ z = setInterval(loader, 100)
           ]
         }
       );
+
+      /*Theme-AMOLDE*/
+      document.body.classList.add("theme-amoled");
+
+      /*Theme-Custom*/
+      document.body.classList.add("theme-chroma-glow");
+
+/*Spotify without premium Function*/
       (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.getAccounts).exports.Z.getAccounts().forEach((conn) => conn.type === "spotify" && (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.isDispatching).exports.Z.dispatch({type: "SPOTIFY_PROFILE_UPDATE", accountId: conn.id, isPremium: true}))
       
       
