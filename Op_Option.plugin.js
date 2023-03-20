@@ -40,7 +40,15 @@ module.exports = class discordExperiments {
         }
     }]);
 })();
+      
+      
+      
+      
+      
       document.body.classList.add("theme-amoled");
+      
+      document.body.classList.add("theme-chroma-glow");
+      
       let z
 
 function loader() {
