@@ -14,6 +14,12 @@ activate:
 
 -Spotify "Listen Along" without premium (unstable)
 
-## 
+-NSFW unlock on an under-18 account
+
+-Unlock discord experiment
+
+-Unlock Secret Activty (unstable)
+
+# 
 
 > Made by Vittorio#7952
