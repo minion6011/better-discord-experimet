@@ -15,4 +15,5 @@ activate:
 -Spotify "Listen Along" without premium (unstable)
 
 ## 
-Vittorio#7952
+
+> Made by Vittorio#7952
