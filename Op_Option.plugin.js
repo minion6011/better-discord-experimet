@@ -134,18 +134,37 @@ z = setInterval(loader, 100)
         }
       );
 
-      /*Theme-AMOLDE*/
-      document.body.classList.add("theme-amoled");
+/*Theme-AMOLDE*/
+document.body.classList.add("theme-amoled");
 
-      /*Theme-Custom*/
-      document.body.classList.add("theme-chroma-glow");
+/*Theme-Custom*/
+document.body.classList.add("theme-chroma-glow");
 
 /*Spotify without premium Function*/
-      (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.getAccounts).exports.Z.getAccounts().forEach((conn) => conn.type === "spotify" && (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.isDispatching).exports.Z.dispatch({type: "SPOTIFY_PROFILE_UPDATE", accountId: conn.id, isPremium: true}))
+(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.getAccounts).exports.Z.getAccounts().forEach((conn) => conn.type === "spotify" && (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.isDispatching).exports.Z.dispatch({type: "SPOTIFY_PROFILE_UPDATE", accountId: conn.id, isPremium: true}))   
+
+/*NSFW unlock on an under-18 account*/
+var findModule=(item)=>window.webpackChunkdiscord_app.push([[Math.random()],{},(req)=>{for(const m of Object.keys(req.c).map((x)=>req.c[x].exports).filter((x)=>x)){if(m.default&&m.default[item]!==undefined)return m.default}}])
+findModule('getCurrentUser').getCurrentUser().nsfwAllowed = true
       
-      
-      
-      
+/*Unlock Secret Activty*/
+var AppIds = ["814288819477020702", "1039835161136746497", "1037680572660727838", "880559245471408169"]
+window.webpackChunkdiscord_app.push([[Math.random()], {}, (req) => {for (const m of Object.keys(req.c).map((x) => req.c[x].exports).filter((x) => x)) {if (m.default && m.default.getEnabledAppIds !== undefined) {return m.default.getEnabledAppIds = () => AppIds}}}]);
+
+/*Unlock Experiment*/
+let wpRequire;
+window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
+mod = Object.values(wpRequire.c).find(x => typeof x?.exports?.Z?.isDeveloper !== "undefined");
+usermod = Object.values(wpRequire.c).find(x => x?.exports?.default?.getUsers)
+nodes = Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes)
+try {
+    nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({user: {flags: 1}})
+} catch (e) {}
+oldGetUser = usermod.exports.default.__proto__.getCurrentUser;
+usermod.exports.default.__proto__.getCurrentUser = () => ({isStaff: () => true})
+nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["CONNECTION_OPEN"]()
+usermod.exports.default.__proto__.getCurrentUser = oldGetUser
+   
     } catch (err) {
       BdApi.showNotice(
         "Plugin error",
