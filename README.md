@@ -13,3 +13,5 @@ activate:
 -You can use discord nitro stickers
 
 -Spotify "Listen Along" without premium (unstable)
+
+## Vittorio#7952
