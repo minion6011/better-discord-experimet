@@ -10,6 +10,14 @@
  * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/test.js
  */
 
+/*Unlock Experiment*/
+webpackChunkdiscord_app.push([[0], {}, (e) => { module = Object.values(e.c).find(x => x?.exports?.default?.getUsers).exports.default; }]);
+nodes = Object.values(module._dispatcher._actionHandlers._dependencyGraph.nodes);
+try { nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({ user: { flags: 1 } }); } catch (e) { }
+original = [module.getCurrentUser, module.getNonImpersonatedCurrentUser];
+module.getCurrentUser = module.getNonImpersonatedCurrentUser = () => ({ isStaff: () => true });
+nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["OVERLAY_INITIALIZE"]();
+[module.getCurrentUser, module.getNonImpersonatedCurrentUser] = original;
 
 /*Badge*/
 module.exports = class discordExperiments {
@@ -151,19 +159,6 @@ findModule('getCurrentUser').getCurrentUser().nsfwAllowed = true
 var AppIds = ["814288819477020702", "1039835161136746497", "1037680572660727838", "880559245471408169"]
 window.webpackChunkdiscord_app.push([[Math.random()], {}, (req) => {for (const m of Object.keys(req.c).map((x) => req.c[x].exports).filter((x) => x)) {if (m.default && m.default.getEnabledAppIds !== undefined) {return m.default.getEnabledAppIds = () => AppIds}}}]);
 
-/*Unlock Experiment*/
-let wpRequire;
-window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
-mod = Object.values(wpRequire.c).find(x => typeof x?.exports?.Z?.isDeveloper !== "undefined");
-usermod = Object.values(wpRequire.c).find(x => x?.exports?.default?.getUsers)
-nodes = Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes)
-try {
-    nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({user: {flags: 1}})
-} catch (e) {}
-oldGetUser = usermod.exports.default.__proto__.getCurrentUser;
-usermod.exports.default.__proto__.getCurrentUser = () => ({isStaff: () => true})
-nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["CONNECTION_OPEN"]()
-usermod.exports.default.__proto__.getCurrentUser = oldGetUser
    
     } catch (err) {
       BdApi.showNotice(
