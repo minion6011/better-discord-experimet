@@ -58,7 +58,7 @@ nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["OVERLAY_INI
         }
       );
     }
-  }
+  
 
   stop() {
     BdApi.showNotice("You need to reboot BD for disabling the pack", {
