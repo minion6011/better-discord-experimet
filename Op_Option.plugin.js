@@ -1,13 +1,13 @@
 /**
  * @name DiscordOpOption
- * @author Vittorio
- * @description Activate option in discord like fake nitro for experiment like custom theme
- * @version 0.2
- * @authorId 
+ * @author minion6011
+ * @description Activate option in discord
+ * @version 0.3
+ * @authorId 1181630796759564358
  * @invite JJ6ds6UdNz
  * @website https://github.com/minion6011/better-discord-experimet
  * @source https://github.com/minion6011/better-discord-experimet
- * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/test.js
+ * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/Op_Option.plugin.js
  */
 
 
