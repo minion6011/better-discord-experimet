@@ -10,7 +10,7 @@
  * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/Op_Option.plugin.js
  */
 
-
+try {
 
 /*Theme-AMOLDE*/
 document.body.classList.add("theme-amoled");
