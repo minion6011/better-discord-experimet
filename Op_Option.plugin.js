@@ -1,38 +1,59 @@
 /**
  * @name DiscordOpOption
- * @author minion6011
- * @description Activate option in discord
- * @version 0.3
- * @authorId 1181630796759564358
+ * @author Vittorio
+ * @description Activate option in discord like fake nitro for experiment like custom theme
+ * @version 0.2
+ * @authorId 
  * @invite JJ6ds6UdNz
  * @website https://github.com/minion6011/better-discord-experimet
  * @source https://github.com/minion6011/better-discord-experimet
- * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/Op_Option.plugin.js
+ * @updateUrl https://raw.githubusercontent.com/minion6011/better-discord-experimet/main/test.js
  */
 
-start() {
-try {
-
-/*Theme-AMOLDE*/
-document.body.classList.add("theme-amoled");
 
 
-/*NSFW unlock on an under-18 account*/
-var findModule=(item)=>window.webpackChunkdiscord_app.push([[Math.random()],{},(req)=>{for(const m of Object.keys(req.c).map((x)=>req.c[x].exports).filter((x)=>x)){if(m.default&&m.default[item]!==undefined)return m.default}}])
-findModule('getCurrentUser').getCurrentUser().nsfwAllowed = true
 
-/*Spotify without premium Function*/
-(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.getAccounts).exports.Z.getAccounts().forEach((conn) => conn.type === "spotify" && (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.isDispatching).exports.Z.dispatch({type: "SPOTIFY_PROFILE_UPDATE", accountId: conn.id, isPremium: true}))   
+module.exports = class discordExperiments {
+  start() {
+    BdApi.showToast("Pack attivated - Op_Option", {type:"info",icon: true,timeout: 7500,forceShow: true});
+    try {
 
-/*Experiments*/
-webpackChunkdiscord_app.push([[Math.random()], {}, (e) => { if(e.c!=undefined){module = Object.values(e.c).find(x => x?.exports?.default?.getUsers).exports.default;} }]);
-nodes = Object.values(module._dispatcher._actionHandlers._dependencyGraph.nodes);
-try { nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({ user: { flags: 1 } }); } catch (e) { }
-original = [module.getCurrentUser, module.getNonImpersonatedCurrentUser];
-module.getCurrentUser = module.getNonImpersonatedCurrentUser = () => ({ isStaff: () => true });
-nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["OVERLAY_INITIALIZE"]();
-[module.getCurrentUser, module.getNonImpersonatedCurrentUser] = original;
-    
+      
+/*Unlock Experiment*/
+      let c; webpackChunkdiscord_app.push([[Symbol()],{},r=>c=r.c]); webpackChunkdiscord_app.pop();
+      let u = Object.values(c).find(x=>x?.exports?.default?.getUsers).exports.default;
+      let m = Object.values(u._dispatcher._actionHandlers._dependencyGraph.nodes);
+      u.getCurrentUser().flags |= 1;
+      m.find((x)=>x.name === "DeveloperExperimentStore").actionHandler["CONNECTION_OPEN"]();
+      try {m.find((x)=>x.name === "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({user:{flags: 1}})} catch {};
+      m.find((x)=>x.name === "ExperimentStore").storeDidChange();
+
+
+
+
+
+
+
+/*Edit Mode - Activate - Deactivate*/
+      return BdApi.showNotice(
+        `Desing Mode (edit all discord)`,
+        {
+          type: "warning",
+          buttons: [
+            {
+              label: "activate",
+              onClick: () => document.designMode = 'on'
+            },
+            {
+              label: "deactivate",
+              onClick: () => document.designMode = 'off'
+            }
+          ]
+        }
+      );
+
+
+   
     } catch (err) {
       BdApi.showNotice(
         "Plugin error",
@@ -59,7 +80,7 @@ nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["OVERLAY_INI
         }
       );
     }
-}
+  }
 
   stop() {
     BdApi.showNotice("You need to reboot BD for disabling the pack", {
