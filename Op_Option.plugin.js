@@ -23,7 +23,15 @@ findModule('getCurrentUser').getCurrentUser().nsfwAllowed = true
 /*Spotify without premium Function*/
 (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.getAccounts).exports.Z.getAccounts().forEach((conn) => conn.type === "spotify" && (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m => m?.exports?.Z?.isDispatching).exports.Z.dispatch({type: "SPOTIFY_PROFILE_UPDATE", accountId: conn.id, isPremium: true}))   
 
-
+/*Experiments*/
+webpackChunkdiscord_app.push([[Math.random()], {}, (e) => { if(e.c!=undefined){module = Object.values(e.c).find(x => x?.exports?.default?.getUsers).exports.default;} }]);
+nodes = Object.values(module._dispatcher._actionHandlers._dependencyGraph.nodes);
+try { nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({ user: { flags: 1 } }); } catch (e) { }
+original = [module.getCurrentUser, module.getNonImpersonatedCurrentUser];
+module.getCurrentUser = module.getNonImpersonatedCurrentUser = () => ({ isStaff: () => true });
+nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["OVERLAY_INITIALIZE"]();
+[module.getCurrentUser, module.getNonImpersonatedCurrentUser] = original;
+    
     } catch (err) {
       BdApi.showNotice(
         "Plugin error",
