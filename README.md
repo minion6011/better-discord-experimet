@@ -1,3 +1,4 @@
+# Obsolete 🕸️
 # Better-Discord-Op_Option
 
 activate: 
